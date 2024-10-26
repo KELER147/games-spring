@@ -1,0 +1,211 @@
+/* styles.css */
+
+/* Variáveis de Cores */
+:root {
+    --primary-color: #6A5ACD; /* SlateBlue */
+    --secondary-color: #836FFF; /* SlateBlue1 */
+    --third-color: #6959CD; /* SlateBlue3 */
+    --dark-color: #483D8B; /* DarkSlateBlue */
+    --midnight-color: #191970; /* MidnightBlue */
+}
+
+/* Reseta alguns estilos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, #6A5ACD 3%, #836FFF 38%, #6959CD 68%, #483D8B 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+/* Animação de Gradiente */
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Ondas */
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+/* Animação de Ondas */
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+    25% {
+        transform: translateX(-25%);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    75% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(1);
+    }
+}
+
+/* Estilos adicionais para a mensagem de boas-vindas */
+.welcome-message {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.8); /* Adiciona transparência */
+    margin: 100px auto; /* Centraliza e cria um espaço acima e abaixo */
+    width: 300px; /* Define uma largura fixa */
+    max-width: 90%; /* Para que não ultrapasse a tela em dispositivos menores */
+}
+
+.welcome-message h1 {
+    color: var(--primary-color);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--dark-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Estilos para tabelas */
+.table {
+    width: 100%;
+    border-collapse: separate; /* Para bordas arredondadas */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Para esconder bordas de colunas */
+    margin: 20px 0;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    border: 1px solid var(--primary-color);
+    text-align: left;
+}
+
+.table th {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo mais claro para as linhas ímpares */
+}
+
+/* Botões */
+.btn {
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #004494; /* Azul mais escuro */
+}
+
+.btn-warning {
+    background-color: #ffc107; /* Amarelo padrão */
+    border: none;
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800; /* Amarelo Escuro */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Vermelho padrão */
+    border: none;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333; /* Vermelho Escuro */
+}
+
+/* Formulários */
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.25); /* Cor de foco ajustada */
+}
+
+.invalid-feedback {
+    font-size: 0.875rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+}
